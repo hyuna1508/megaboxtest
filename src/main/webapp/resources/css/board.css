@@ -1,0 +1,28 @@
+@import url(reset.css);
+
+#bdy{
+	 width: 100%;
+	 position: relative;
+	 top: 100px;
+	 text-align: center;
+}
+
+#bdy>.container{
+	height: 1200px;
+	margin: 0 auto;
+}
+
+#bdy>.container>.btn{
+	float: right;
+}
+
+
+.table{
+	text-align: center;
+	margin: 40px;
+}
+
+textarea{
+	resize: none;
+}
+

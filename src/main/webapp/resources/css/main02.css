@@ -1,0 +1,564 @@
+@import url(reset.css);
+
+body{    
+    font-size: 13px;    
+    font-family: sans-serif;
+}
+a{    
+    text-decoration: none;    
+    color: #777;
+}
+
+
+#headerWrap{
+    position: fixed;   
+    width: 100%;    
+    height: 70px;    
+    z-index: 1000;
+    background: #0d0a0b;
+    border-bottom: 1px solid  #cccccc;
+}
+#headerWrap>header{
+    position: relative;    
+    width: 100%;    
+    margin: 0 auto;
+    max-width: 1250px;
+}
+header>h1{
+    position: absolute;    
+    top: 20px;    
+    left: 50%;    
+    margin-left: -70px;
+}
+.topMenuleft{
+    float: left;    
+    margin-top: 10px;
+    width: 19%;
+}
+.topMenuleft> dd{
+    float: left;    
+    padding: 0 10px;
+}
+.topMenuleft> dd:nth-of-type(4){
+    margin-left: 38%;
+}
+.topMenuright{
+    float: right;
+    margin-top: 10px;  
+    width: 19%;
+}
+.topMenuright> dd{
+    float: left;    
+    padding: 0 10px;
+}
+#headMenu{
+    position: relative;    
+    width: 100%;    
+    margin: 0 auto;
+    max-width: 1250px;
+}
+#headMenu>#clickMenu{
+    margin-top: 40px;
+}
+#headMenu>#clickMenu a{
+    margin-left: 15px;
+}
+#headMenu>#clickMenu a:nth-of-type(3){
+    float: right;
+    margin-right: 15px;
+}
+#headMenu>#clickMenu a:last-of-type{
+    float: right;
+    margin-top: -8px;
+}
+
+#mainMenuBtn{
+    width: 100%;
+    height: 40px;
+    margin: 0 auto;
+    position: relative;
+}
+#mainMenuBtn>.mainMenuBtn{
+    width: 100%;
+    position: absolute;
+    margin-top:-20px;
+}
+.mainMenuBtn ul,
+.mainMenuBtn li{
+    margin:0;
+    padding:0;
+}
+.mainMenuBtn li {
+    position:relative;
+    list-style:none;
+    float:left;
+}
+.mainMenuBtn> li:first-of-type{
+    margin-left: 5%;
+}
+.mainMenuBtn> li:nth-of-type(4){
+    margin-left: 40%;
+}
+.mainMenuBtn>li>a{
+    display:block;
+    padding-left: 50px;
+    font-weight: bold;
+    color: white;
+  }
+.mainMenuBtn li ul{
+    position:absolute;
+    width: 1250px;
+    display:none;
+    float: left;
+    box-sizing: border-box;
+    border: 1px solid rgba(0,0,0,20%);;
+    background-color: rgba(0,0,0,20%);
+}
+.mainMenuBtn li.on ul{
+    display:block;
+    background: rgba(0,0,0,20%);
+}
+.mainMenuBtn li ul li{
+    margin: 15px 15px;
+}
+.mainMenuBtn li ul a{
+    color: white;
+}
+
+#headerTop{ /* headerWrap 세로크기 동일값 설정*/
+    width: 100%;
+    height: 70px;
+}
+
+.boxoffice{
+    width: 100%;
+    height: 750px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 35px;
+    background: #252229;
+}
+.boxoffice>h2{
+    font-size:16px;
+    color: white;
+    text-align: center;
+    margin-top: 55px;
+    background: url(../images2/h2.png) no-repeat 50% 100%;
+}
+.boxoffice>p{
+    font-size:16px;
+    color: #cccccc;
+    text-align: right;
+    padding-right: 180px;
+    background: url(../images2/ico-more-cross-gray.png) no-repeat 90% 50%;
+}
+.boxoffice>.mvposter{
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    height: 520px;
+}
+.mvposter>dl{
+    float: left;
+    width: 22%;
+    padding: 15px;
+}
+.mvposter>dl>dd{
+    margin-top: 20px;
+}
+.mvposter>dl{
+    margin-top: 10px;
+}
+.mvposter>dl>button{
+    margin-top: 10px;
+}
+.mvposter>dl>.like{
+    float: left;
+    width: 28%;
+    border-radius: 5px;
+    height: 30px;
+    border: 1px solid #cccccc;
+    background: #0f090a;
+}
+.mvposter>dl>.resereve{
+    float: right;
+    width: 70%;
+    border-radius: 5px;
+    height: 30px;
+    border: 1px solid #037b94;
+    background: #037b94;
+    color: white;
+}
+.mvposter p {
+    overflow: hidden;
+}
+.mvposter p strong {
+    position: absolute;
+    display: block;
+    z-index: 1;
+    width: 300px;
+    height: 420px;
+    background: rgba(0, 0, 0, 70%);
+    text-align: left;
+    font-size: 16px;
+    color: white;
+    margin-top: -420px;
+    opacity: 0;
+}
+.mvposter p:nth-child(1) strong {
+    opacity: 0;
+}
+
+
+.boxoffice>.service{
+    width: 1250px;    
+    height: 56px;
+    background-color:rgba(0,0,0,20%);
+    margin: 0 auto;
+}
+.boxoffice>.service>dl{
+    width: 100%;
+}
+.service>dl>dd{
+    float: left;
+    margin: 0 100px;
+    padding: 14px 0px;
+}
+.service>dl>dd input[type="text"]{
+    border: 1px solid rgba(0,0,0,20%);
+    float: left;
+    box-sizing: border-box;
+}
+.service>dl>dd>a{
+    color: white;
+}
+.service>dl>dd>a:hover{
+    text-decoration:underline; 
+    color :white;
+}
+
+#bodyWrap{
+    position: relative;
+    width: 100%;
+}
+#bodyWrap:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+#bodyWrap>.section1{
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    height: 600px;
+}
+#bodyWrap>.section1:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.newBenefit{
+    float: left;
+    width: 60%;
+    height: 450px;
+    position: relative;
+    overflow: hidden;
+}
+.newBenefit>h3{
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+.benefit{
+    position: relative;
+    width: 100%;
+}
+.benefit>li{
+    position: absolute;
+    /* margin: 0 auto; */
+}
+.benefit>li:first-of-type{
+    left:0;
+}
+.benefit>li:nth-of-type(2){
+    left:100%;
+}
+.benefit>li:last-of-type{
+    left:200%;
+}
+.benefit>li>ul{
+    position: absolute;
+    width: 700px;
+}
+.benefit>li>ul>li{
+    float: left;
+}
+.benefit_btn{
+    position: absolute;
+    bottom: 40px;
+}
+.benefit_btn li{
+    float: left;
+    width: 100px;
+    margin-right: 3px;
+    background: url(../images2/btn-button-off.png) no-repeat 0 0;
+    text-indent: -999999px;
+    overflow: hidden;
+}
+.benefit_btn li.on{
+    background: url(../images2/btn-button-on.png) no-repeat 0 0;
+}
+.adver{
+    float: right;
+    width: 38%;
+    height: 550px;
+    position: relative;
+    overflow: hidden;
+}
+.event{
+    float: left;
+    width: 60%;
+    height: 260px;
+    position: relative;
+}
+.event>.eventt{
+    width: 530px;
+    box-shadow: 5px 5px 5px 5px rgba(0,0,0,20%);
+}
+
+#bodyWrap>.section2{
+    width: 100%;
+    height: 360px;
+    /* max-width: 1250px; */
+    margin: 0 auto;
+    background: #503396;
+}
+#bodyWrap>.section2:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.subMenu{
+    width: 100%;
+    max-width: 1250px;
+    height: 100px;
+    /* padding-top: 120px; */
+    padding: 120px 60px 0 60px;
+    margin: 0 auto;
+}
+.subMenu>dl{
+    float: left;
+    width: 19%;
+    text-align: center;
+}
+.subMenu>dl>dd a{
+    color: white;
+    font-weight: bold;
+}
+.subMenu img{
+    padding: 15px 0;
+}
+
+#bodyWrap>.section4{
+    width: 100%;
+    height: 200px;
+    max-width: 1250px;
+    margin: 0 auto;
+    background: #fff;
+}
+#bodyWrap>.section4:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+/* .guide{
+    width: 100%;
+    max-width: 1250px;
+    height: 300px;
+    padding: 50px;
+    margin: 0 auto;
+}
+.guide>dl{
+    width: 23%;
+    float: left;
+}
+.guide>dl>dd a img{
+    width: 216px;
+    height: 216px;
+} */
+.qnaMenu{
+    width: 100%;
+    max-width: 1250px;
+    height: 100px;
+    padding: 50px;
+    margin: 0 auto;
+}
+.qnaMenu>dl{
+    float: left;
+    width: 14%;
+    text-align: center;
+}
+.qnaMenu>dl>dd:hover{
+    text-decoration:underline; 
+    color :white;
+}
+
+
+footer{
+    width:100%;
+    background-color: #f8f8fa;
+}
+footer>.footArea{
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    height: 200px;
+    position: relative;
+}
+footer>.foottext{
+    float: left;
+    position: relative;
+    overflow: hidden;
+    width:78%;
+}
+.foottext>ul{
+    padding-top: 15px;
+}
+.foottext>ul:after{
+    content:"";
+    display: block;
+    clear: both;
+}
+.foottext>ul>li{
+    float: left;
+    padding-right: 15px;
+}
+.foottext>ul>li>a{
+    color: black;
+    font-size: 12px;
+}
+.foottext>p:first-of-type{
+    position: absolute;
+    right: 10px;
+    top: 15px;
+}
+.footsearch{
+    border-radius: 20px;
+    background: url(../images2/ico-footer-search.png) no-repeat 10% 50%;
+    width: 100px;
+    height: 26px;
+    text-align: center;
+    text-indent: 10px;
+    border: 1px solid #cccccc;
+}
+.foottext>p:last-of-type{
+    float: left;
+    margin-top: 30px;
+}
+.foottext>address{
+    margin-top: 30px;
+    text-indent: 30px;
+    color: black;
+}
+.foottext>address span{
+    padding: 0 30px;
+}
+
+/* .footArea>.footsns{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 20%;
+    margin: 0 auto;
+}
+.footsns>.sns{
+    width: 20%;
+} */
+
+
+    #loginWrap>.login{
+        width: 100%;
+        max-width: 1250px;
+        margin: 0 auto;
+        height: 400px;
+    }
+    
+    #loginWrap>.login:after{
+        content: "";
+        display: block;
+        clear: both;
+    }
+    
+    .loginbox{
+        width: 300px;
+        height: 300px;
+        border: 1px solid #cccccc;
+        margin: 40px auto;
+        padding: 20px 50px;
+        box-sizing: border-box;
+    }
+    .login h1{
+        font-size: 28px;
+        color: #503396;
+        font-weight: bold;
+        text-align: center; 
+        margin-bottom: 15px;
+    }
+    
+    .loginbox input[type="text"],
+	.loginbox input[type="password"]{
+    text-align:center; 
+    font-size:15px; 
+    width:200px; 
+    height:35px;
+    }
+    
+    
+    #joinWrap{
+	 width: 100%;
+	 position: relative;
+	 height: 800px;
+	 background-color: #fefefe;
+}
+
+    #joinWrap>.join{
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .joinbox{
+        margin: 20px auto;
+        padding: 20px 50px;
+    }
+    
+    .joinbox p label{
+            font-size: 16px;
+        	font-weight: bold;
+    }
+    
+    .join h1{
+        font-size: 28px;
+        color: #503396;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+    
+    .join input[type="text"],
+    .join input[type="password"],
+    .join input[type="email"] { 
+    font-size:15px; 
+    width:200px; 
+    height:35px;
+    }
+    
+    .join select{
+    text-align:center; 
+    font-size:15px; 
+    width:200px; 
+    height:35px;
+    }
+    
+
+
+@media (min-width:1024px){
+}

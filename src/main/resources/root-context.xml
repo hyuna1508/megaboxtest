@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+		<context:property-placeholder location="classpath:dbinfo.properties"/>
+		<context:component-scan base-package="com.hyun.megabox"></context:component-scan>
+		
+		<bean class="org.apache.commons.dbcp.BasicDataSource" id="dataSource">
+			<property name="driverClassName" value="${megabox.driver}" />
+			<property name="url" value="${megabox.url}" />
+			<property name="username" value="${megabox.username}" />
+			<property name="password" value="${megabox.password}" />
+		</bean>
+		
+		<bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactory">
+			<property name="dataSource" ref="dataSource" />
+			<property name="configLocation" value="classpath:mybatisConfig.xml" />
+  			<property name="mapperLocations">
+				<list>
+					<value>classpath:mapper/board.xml</value>
+					<value>classpath:mapper/member.xml</value>
+				</list>
+			</property>
+
+		</bean>
+		
+		<bean class="org.mybatis.spring.SqlSessionTemplate" id="sqlSession">
+			<constructor-arg ref="sqlSessionFactory" />
+		</bean>
+</beans>

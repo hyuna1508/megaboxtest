@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="mem">
+  	<!-- 회원가입 -->
+	<insert id="insertMember" parameterType="member">
+		<![CDATA[
+		insert into member values(#{id},#{password},#{name},#{gender},#{address},#{birth},#{email}, sysdate, 10, 1)
+		]]>
+	</insert>
+	
+	<!-- 아이디중복체크 -->
+	<select id="idCk" resultType="int">
+		<![CDATA[
+		select count(*) from member 
+		where id=#{id}
+		]]>
+	</select>
+	
+	<!-- 비밀번호 체크 -->
+	<select id="pwdCk" resultType="int">
+		<![CDATA[
+		select coount(*) from member 
+		where id=#{id} and password=#{password}
+		]]>
+	</select>
+	
+	<!-- 로그인 -->
+	<select id="login" resultType="member">
+		<![CDATA[
+		select id, password, name 
+		from member 
+		where id=#{id} and password=#{password}
+		]]>
+	</select>
+	
+	<!--  회원 본인 정보 조회 -->
+	<select id="selectMember" resultType="member">
+		<![CDATA[
+		select * from member 
+		where id=#{id}
+		]]>
+	</select>
+	
+	<!-- 회원정보수정 -->
+	<update id="myinfo" parameterType="member">
+		<![CDATA[
+		upadate member set #{password} 
+		where id=#{id}
+		]]>
+	</update>
+	
+	<!-- 회원본인탈퇴 -->
+	<delete id="deleteMember" parameterType="string">
+		<![CDATA[
+		delete from member 
+		where id=#{id} and password=#{password}
+		]]>
+	</delete>
+	
+	<!-- 회원등급 관리-->
+	<update id="eventGrade" parameterType="member">
+		<![CDATA[
+		update member set grade= grade+10 where grade <50;
+		]]>
+	</update>
+	
+	<select id="womanMember" resultType="member" parameterType="string">
+		<![CDATA[
+		select * from member
+		where id=#{id}
+		]]>
+	</select>
+	
+	<!-- 생년월일별 급여 내림차순 조회 
+	<select id="womanMember" resultType="member" parameterType="String">
+		<![CDATA[
+	select birth from member order by 급여;
+	]]>
+	</select>
+	-->
+	
+	<!-- 휴면회원 관리-->
+	<update id="sleepMember" parameterType="string">
+		<![CDATA[
+		update member set state=2 
+		where id=#{id};
+		]]>
+	</update>
+	
+	<update id="noneSleepMember" parameterType="string">
+		<![CDATA[
+		update member set state=1 
+		where id=#{id};
+		]]>
+	</update>
+	
+	<!-- 탈퇴회원 관리 -->
+	<update id="secessionMember" parameterType="string">
+		<![CDATA[
+			update member set state=3 
+			where id=#{id};
+		]]>
+	</update>
+	
+	<select id="secessionLookup" resultType="member" parameterType="int">
+		<![CDATA[
+		select #{id},#{password},#{name}, #{email} from member 
+		where state=3;
+		]]>
+	</select>
+	
+	<delete id="secessionRemove" parameterType="int">
+	<![CDATA[
+		delete from member 
+		where state=3;
+		]]>
+	</delete>
+  
+  
+  </mapper>
